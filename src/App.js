@@ -1,6 +1,8 @@
 import React, { Component } from 'react'
 import Profile from './component/Profile';
-
+import 'bootstrap/dist/css/bootstrap.min.css';
+import Header from './component/header/Header';
+import "./App.css"
 
 export class App extends Component {
   state = {
@@ -11,9 +13,14 @@ export class App extends Component {
   }
   render() {
     return (
-      <div style={{marginTop : "250px", textAlign:"center"}}>
+      <div className='all'>
+        <Header/>
+        
+      <div style={{marginTop : "20px", textAlign:"center"}}>
         <button onClick={this.handleShow}>{this.state.isShow ? "Hide" : "Show"}</button>
         {this.state.isShow === true ? <Profile/> : null}
+      </div>
+      
       </div>
     )
   }
